@@ -1,0 +1,47 @@
+<ion-content class="login-content">
+  <ion-row class="logo-row">
+      <img src="../assets/imgs/img_login_bg.png" class="banner_img"/>
+     <div class="login_sec">
+    <ion-col>
+      <img src="../assets/imgs/img_logo.png" class="logo_img"/>
+    </ion-col>
+ 
+ 
+  <div class="login-box">
+    <form (ngSubmit)="login()" #registerForm="ngForm">
+      <ion-row>
+        <ion-col>
+          <ion-list inset>
+            
+            <ion-item>
+              <ion-input type="text" placeholder="Email" name="email" [(ngModel)]="registerCredentials.email" required></ion-input>
+            </ion-item>
+            
+            <ion-item>
+              <ion-input type="password" placeholder="Password" name="password" [(ngModel)]="registerCredentials.password" required></ion-input>
+            </ion-item>
+<hr>
+            <ion-col>
+                <button ion-button class="submit-btn redbtn" full type="submit">Login with gmail</button>
+            </ion-col>
+            <ion-col>
+                <button ion-button class="submit-btn bluebtn" full type="submit">Login with facebook</button>
+            </ion-col>
+            
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      
+      <ion-row>
+        <ion-col class="signup-col">
+          <button ion-button class="submit-btn bluebtn" full type="submit" [disabled]="!registerForm.form.valid">Login</button>
+          <!-- <button ion-button class="register-btn" block clear (click)="createAccount()">Create New Account</button> -->
+
+        </ion-col>
+      </ion-row>
+      
+    </form>
+  </div>
+</div>
+</ion-row>
+</ion-content>

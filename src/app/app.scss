@@ -14,3 +14,19 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+.bluebtn {
+    text-transform: none;
+    background: #3c3b6e;
+    border-radius: 20px;
+    padding: 20px 34px;
+    margin: 0 10px;
+    font-weight: normal;
+}
+.redbtn {
+    text-transform: none;
+    background: #b22234;
+    border-radius: 20px;
+    padding: 20px 34px;
+    margin: 0 10px;
+    font-weight: normal;
+}
