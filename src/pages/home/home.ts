@@ -256,12 +256,12 @@ export class HomePage {
   shareInfo(imgUrl) {
     this.socialSharing.share(imgUrl.url).
       then(() => {
-        alert("Sharing success");
+        //alert("Sharing success");
       
         // Success!
       }).catch(() => {
         // Error!
-        alert("Share failed");
+        //alert("Share failed");
       });
   }
 
