@@ -257,7 +257,7 @@ export class HomePage {
 
   shareInfo(photo) {
     alert(photo);
-    this.socialSharing.share(null, photo, null).
+    this.socialSharing.share(photo).
       then(() => {
         //alert("Sharing success");
       
