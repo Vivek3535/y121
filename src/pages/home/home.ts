@@ -255,9 +255,9 @@ export class HomePage {
     });
   }
 
-  shareInfo(message, imgUrl) {
-    console.log(imgUrl, message);
-    this.socialSharing.share(message, null, imgUrl).
+  shareInfo(photo) {
+    console.log(photo);
+    this.socialSharing.share(null, photo.url, null).
       then(() => {
         //alert("Sharing success");
       
