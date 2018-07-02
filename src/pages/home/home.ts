@@ -8,6 +8,8 @@ import 'rxjs/add/operator/map';
 import { HomescreenPage } from '../homescreen/homescreen';
 import { FollowfriendsPage } from '../followfriends/followfriends';
 import { Common } from "../../providers/common";
+import { File } from '@ionic-native/file';
+import { FileOpener } from '@ionic-native/file-opener';
 import { SocialSharing } from '@ionic-native/social-sharing';
 
 @IonicPage()
@@ -38,7 +40,7 @@ export class HomePage {
   mediaFiles = [];
   // posts: any;
 
-  constructor(public alertCtrl: AlertController, public nav: NavController, public http: Http, public app: App, public authService: AuthService, public common: Common, private camera: Camera, public toastCtrl: ToastController, public loadingCtrl: LoadingController, private transfer: FileTransfer, private socialSharing: SocialSharing) {
+  constructor(public alertCtrl: AlertController, public nav: NavController, public http: Http, public app: App, public authService: AuthService, public common: Common, private camera: Camera, public toastCtrl: ToastController, public loadingCtrl: LoadingController, private transfer: FileTransfer, private socialSharing: SocialSharing, private file: File, public fileOpener: FileOpener, ) {
     const data = JSON.parse(localStorage.getItem('userData'));
     this.userDetails = data.userData;
     this.userPostData.user_id = this.userDetails.user_id;
@@ -253,15 +255,46 @@ export class HomePage {
     });
   }
 
-  shareInfo(imgUrl) {
-    this.socialSharing.share(imgUrl).
-      then(() => {
-        //alert("Sharing success");
+  // shareInfo(imgUrl) {
+  //   this.socialSharing.share(imgUrl).
+  //     then(() => {
+  //       //alert("Sharing success");
       
-        // Success!
-      }).catch(() => {
-        // Error!
-        //alert("Share failed");
+  //       // Success!
+  //     }).catch(() => {
+  //       // Error!
+  //       //alert("Share failed");
+  //     });
+  // }
+
+  shareInfo(imgUrl) { 
+    let imageName = imgUrl;
+    const ROOT_DIRECTORY = 'file:///sdcard//';
+    const downloadFolderName = 'tempDownloadFolder';
+    
+    //Create a folder in memory location
+    this.file.createDir(ROOT_DIRECTORY, downloadFolderName, true)
+      .then((entries) => {
+ 
+        //Copy our asset/img/FreakyJolly.jpg to folder we created
+        this.file.copyFile(this.file.applicationDirectory + "www/assets/img/", imageName, ROOT_DIRECTORY + downloadFolderName + '//', imageName)
+          .then((entries) => {
+ 
+            //Common sharing event will open all available application to share
+            this.socialSharing.share("Message","Subject", ROOT_DIRECTORY + downloadFolderName + "/" + imageName, imageName)
+              .then((entries) => {
+                console.log('success ' + JSON.stringify(entries));
+              })
+              .catch((error) => {
+                alert('error ' + JSON.stringify(error));
+              });
+          })
+          .catch((error) => {
+            alert('error ' + JSON.stringify(error));
+          });
+      })
+      .catch((error) => {
+        alert('error ' + JSON.stringify(error));
       });
   }
 

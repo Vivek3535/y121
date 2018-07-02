@@ -5,6 +5,8 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { File } from '@ionic-native/file';
+import { FileOpener } from '@ionic-native/file-opener';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { MyApp } from './app.component';
 import { HomescreenPage } from '../pages/homescreen/homescreen';
@@ -77,6 +79,8 @@ import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-nati
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthService,
     ShareService,
+    File,
+    FileOpener,
     SocialSharing
   ]
 })
