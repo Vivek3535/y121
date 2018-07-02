@@ -255,46 +255,18 @@ export class HomePage {
     });
   }
 
-  // shareInfo(imgUrl) {
-  //   this.socialSharing.share(imgUrl).
-  //     then(() => {
-  //       //alert("Sharing success");
-      
-  //       // Success!
-  //     }).catch(() => {
-  //       // Error!
-  //       //alert("Share failed");
-  //     });
-  // }
-
-  shareInfo(imgUrl) { 
+  shareInfo(imgUrl) {
     let imageName = imgUrl;
     const ROOT_DIRECTORY = 'file:///sdcard//';
     const downloadFolderName = 'tempDownloadFolder';
-    
-    //Create a folder in memory location
-    this.file.createDir(ROOT_DIRECTORY, downloadFolderName, true)
-      .then((entries) => {
- 
-        //Copy our asset/img/FreakyJolly.jpg to folder we created
-        this.file.copyFile(this.file.applicationDirectory + "www/assets/img/", imageName, ROOT_DIRECTORY + downloadFolderName + '//', imageName)
-          .then((entries) => {
- 
-            //Common sharing event will open all available application to share
-            this.socialSharing.share("Message","Subject", ROOT_DIRECTORY + downloadFolderName + "/" + imageName, imageName)
-              .then((entries) => {
-                console.log('success ' + JSON.stringify(entries));
-              })
-              .catch((error) => {
-                alert('error ' + JSON.stringify(error));
-              });
-          })
-          .catch((error) => {
-            alert('error ' + JSON.stringify(error));
-          });
-      })
-      .catch((error) => {
-        alert('error ' + JSON.stringify(error));
+    this.socialSharing.share("Message","Subject", ROOT_DIRECTORY + downloadFolderName + "/" + imageName, imageName).
+      then(() => {
+        //alert("Sharing success");
+      
+        // Success!
+      }).catch(() => {
+        // Error!
+        //alert("Share failed");
       });
   }
 
