@@ -1,0 +1,12 @@
+page-sfclanguage {
+    .headerbg{ background: #3c3b6e; text-align: center;}
+    .top-icons { text-align: left; padding: 0 10px; color:#fff;  text-transform: capitalize; }
+    .top-icons button {background: transparent; box-shadow: none; padding: 0; text-transform: capitalize; font-weight: normal;}
+    .top-icons button:hover {background: transparent !important;}
+    .graybg{background: #f7f7f7; padding: 16px; margin: 16px 0px; text-align: center; color: #555;}
+    .listbg .list .radio-checked .radio-inner {border-color: #3c3b6e;}
+    .listbg .list .item-radio-checked ion-label { color: #3c3b6e;}
+    .listbg .list .item {padding-left: 0;}
+    .listbg .list .item-block .item-inner{padding: 0 16px;} 
+
+}

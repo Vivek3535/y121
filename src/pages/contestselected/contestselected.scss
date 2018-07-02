@@ -1,0 +1,29 @@
+page-contestselected {
+    .headerbg{ background: #1b3c71; text-align: center;}
+    .headerbg .icon-right{text-align: right;}
+    .top-icons { text-align: left; padding: 0 15px; color:#fff;  text-transform: capitalize;}
+    .top-icons button {background: transparent; box-shadow: none; padding: 0; text-transform: capitalize; font-weight: normal;}
+    .top-icons button:hover {background: transparent !important;}
+    .searchbox{margin-top: 5px;}
+    .searchbox .searchbar{background: transparent; border: none; padding: 0;}
+    .searchbox .searchbar .searchbar-input{background-color: #0F2C5A; color: #fff; box-shadow: none; border-radius: 20px; height: 3.3rem; font-size: 1.3rem; padding-left: 16px; padding-right: 16px;}
+    .searchbox .searchbar .searchbar-search-icon{display: none;}  
+    .searchbox .searchbar .searchbar-input::placeholder {color: #fff;}
+    .user-img {border-radius: 50%; width: 42px; height: 42px;}
+    ul {margin: 0;padding: 0; list-style: none;}
+    .contestselected {background: #FF6700; position: relative; width: 100%; height: 150px; text-align: center; margin: 10px 0;}
+    .contestselected .box{left: 50%; position: absolute;top: 50%; transform: translate(-50%, -50%);margin: 0 auto; width: 100%; color: #fff;}
+    .contestselected .box h3{font-size: 20px; font-weight: normal; margin: 10px 0; text-transform: uppercase;}
+    .contestselected .box h4{font-size: 18px; font-weight: normal; margin: 10px 0;}
+    .selected-details{margin-bottom: 20px;}
+    .selected-details .grid .col { padding: 5px 2px;} 
+    .details-box a video {width: 100%;}
+    .details-box a .cont-info{display: inline-flex; margin-top: -12px;} 
+    .details-box a .cont-info .user-img {border-radius: 50%; width: 32px; height: 32px;}
+    .details-box a .cont-info span { text-align: left; padding-left: 3px;}
+    .details-box a .cont-info span h6 { margin: 10px 0 0; font-weight: normal; color: #1B3C71; font-size: 13px;}
+    .details-box a .cont-info span p { margin: 0; font-size: 10px; color: #1B3C71; }
+    .footer ion-icon { color: #333; width: 40%; margin: 10px 0; }
+    .footer .camera {background: #FF6700; padding: 7px; border-radius: 50%; width: 42px; height: 42px;}
+    .footer ion-icon img {width: 22px; margin: 0px;}
+}

@@ -9,5 +9,11 @@ import { HomescreenPage } from './homescreen';
   imports: [
     IonicPageModule.forChild(HomescreenPage),
   ],
+  exports: [
+    HomescreenPage
+  ]
 }) 
-export class HomescreenPageModule {}
+export class HomescreenPageModule {
+
+
+}

@@ -1,53 +1,81 @@
 
 import { Component } from '@angular/core';
-import { NavController, AlertController, LoadingController, Loading, IonicPage } from 'ionic-angular';
-import { AuthService } from '../../providers/authservice/authservice';
+import { AuthService  } from '../../providers/authservice/authservice';
+import { IonicPage, NavController, LoadingController, AlertController } from 'ionic-angular';
+import { HomePage } from '../home/home';
+import { HomescreenPage } from '../homescreen/homescreen';
+import { ForgotpassPage } from '../forgotpass/forgotpass';
 
- 
+
 @IonicPage()
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
 })
-export class LoginPage {
-  loading: Loading;
+export class Login {
   
-  registerCredentials = { email: '', password: '' };
- 
-  constructor(private nav: NavController, private auth: AuthService, private alertCtrl: AlertController, private loadingCtrl: LoadingController) { }
- 
-  public createAccount() {
-    this.nav.push('RegisterPage');
+  resposeData : any;
+  userData = {"username":"", "password":""};
+
+  constructor(public navCtrl: NavController, public loadingCtrl: LoadingController, public authService: AuthService, public alertCtrl: AlertController) {
   }
- 
-  public login() {
-    this.showLoading()
-    this.auth.login(this.registerCredentials).subscribe(allowed => {
-      if (allowed) {        
-        this.nav.setRoot('HomePage');
-      } else {
-        this.showError("Access Denied");
+
+  backtomain()
+      {
+          this.navCtrl.push(HomescreenPage);
       }
-    },
-      error => {
-        this.showError(error);
-      });
+
+      forGotpassPage()
+      {
+          this.navCtrl.push(ForgotpassPage);
+      }
+
+  ionViewDidLoad() {
+    //console.log('ionViewDidLoad Login');
   }
-  
-  showLoading() {
-    this.loading = this.loadingCtrl.create({
-      content: 'Please wait...',
-      dismissOnPageChange: true
+
+  login(){
+   this.presentLoading();
+   if(this.userData.username && this.userData.password){
+    this.authService.postData(this.userData, "login").then((result) =>{
+    this.resposeData = result;
+    if(this.resposeData.userData){
+      console.log(this.resposeData.userData);
+     localStorage.setItem('userData', JSON.stringify(this.resposeData) )
+    this.navCtrl.push(HomePage);
+  }
+  else{
+    this.showAlert();
+  }
+    
+
+
+    }, (err) => {
+      //Connection failed message
     });
-    this.loading.present();
+   }
+   else{
+    this.showAlert();
+   }
+  
   }
- 
-  showError(text) {
-    this.loading.dismiss();
-    let alert = this.alertCtrl.create({
-      title: 'Fail',
-      subTitle: text,
+
+  presentLoading() {
+    const loader = this.loadingCtrl.create({
+      content: "Please wait...",
+      duration: 3000
+    });
+    loader.present();
+  }
+
+
+  showAlert() {
+    const alert = this.alertCtrl.create({
+      title: 'Incorrect!',
+      subTitle: 'Username and Password',
       buttons: ['OK']
     });
+    alert.present();
   }
+
 }

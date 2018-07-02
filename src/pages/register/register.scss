@@ -1,42 +1,20 @@
 page-register {
-    .login-content {
-      background: #56CA96;
-   
-      .login-box {
-        background: #509287;
-        padding: 20px 20px 0px 20px;
-        margin-top: 30px;
-      }
-   
-      ion-row {
-         align-items: center;
-         text-align: center;
-       }
-   
-       ion-item {
-           border-radius: 30px !important;
-           padding-left: 30px !important;
-           font-size: 0.9em;
-           margin-bottom: 10px;
-           border: 1px solid #ffffff;
-           border-bottom: 0px !important;
-           box-shadow: none !important;
-       }
-   
-       .signup-col {
-         margin: 0px 16px 0px 16px;
-         padding-bottom: 20px;
-       }
-   
-       .item-inner {
-         border-bottom-color: #ffffff !important;
-         box-shadow: none !important;
-       }
-   
-       .submit-btn {
-         background: #51CFB1;
-         border-radius: 30px !important;
-         border: 1px solid #ffffff;
-       }
-    }
+  .headerbg{ background: #3c3b6e; text-align: center;}
+  .top-icons { text-align: left; padding: 0 15px; color:#fff;  text-transform: capitalize;}
+  .top-icons button {background: transparent; box-shadow: none; padding: 0; text-transform: capitalize; font-weight: normal;}
+  .top-icons button:hover {background: transparent !important;}
+  .toolbar-background{ background: #3c3b6e;}
+  h3 {color: #3c3b6e;}
+  .toolbar-title { text-align: center; }
+  ion-navbar.toolbar{padding: 150px 0;}
+  .list .item-block .item-inner{border-bottom: none; border: 0.55px solid #c8c7cc; margin-bottom: 25px; padding: 0 15px; 
+      border-radius: 60px; font-size: 15px;}
+  .list .item-block:last-child .item-inner{border: 0.55px solid #c8c7cc !important;}
+  .list > .item-block:last-child { border-bottom: none; }
+  .list .item { padding-left: 0; background-color: transparent;}
+  .list hr {width: 280px; margin: 12px auto 30px auto; background-color: #d9d9d9;}
+  ion-list.list { margin-bottom: 0;}
+
+  .reg-form{ background: #f7f7f7; padding: 30px 16px 22px; margin: -35px 16px 16px; box-shadow: 0px 0px 4px #999;}
+  .reg-btn {background: #3c3b6e;  padding: 0 5rem; margin-bottom: 15px;}
   }

@@ -1,6 +1,6 @@
 {
-  "name": "sfc",
-  "app_id": "ad6de12a",
+  "name": "sfc-login",
+  "app_id": "",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}

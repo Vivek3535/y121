@@ -1,0 +1,19 @@
+page-forgotpass {
+    ion-content.forget-bg{background: #3c3b6d; color:#fff;}
+    .headerbg{ background: #3c3b6e; text-align: center;}
+    .top-icons { text-align: left; padding: 0 15px; color:#fff;  text-transform: capitalize;}
+    .top-icons button {background: transparent; box-shadow: none; padding: 0; text-transform: capitalize; font-weight: normal;}
+    .top-icons button:hover {background: transparent !important;}
+    .toolbar-background{ background: #3c3b6e;}
+    .forget-form h1{margin-top: 0; font-size: 3rem;}
+    .forget-form h3 {color: #fff; text-align: center; margin-top: 15px;  margin-bottom: 20px;}
+    .forget-form p{font-size: 12px; margin-bottom: 20px;}
+    .list .item-block .item-inner{border-bottom: none; border: 0.55px solid #fff; margin-bottom: 25px; padding: 0 15px; 
+        border-radius: 60px; font-size: 15px; background:#fff;}
+    .list .item-block:last-child .item-inner{border: 0.55px solid #c8c7cc !important;}
+    .list > .item-block:last-child { border-bottom: none; }
+    .list .item { padding-left: 0; background-color: transparent;}
+    ion-list.list { margin-bottom: 0;    }
+    .forget-btn {background: #b22234;  padding: 0 5rem; margin-bottom: 15px;}
+    .forget-btn:hover {background: #b22234 !important;}
+}

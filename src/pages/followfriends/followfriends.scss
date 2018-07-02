@@ -1,0 +1,32 @@
+page-followfriends {
+    .headerbg {
+        background: #1b3d72;
+        padding: 8px;
+        .toolbar-title-md, ion-title {
+          text-align: left;
+      }
+      
+      .toggle_btn_sec {
+        float: left;
+      }
+        .button-md {
+          background: none;
+      padding: 0 10px;
+      // float: left;
+      box-shadow: none;
+    
+        }
+        .ion-md-menu, .ion-md-log-out {
+          color: #fff;
+          font-size: 28px;
+      }
+      }
+      .button-md:hover:not(.disable-hover) {
+        background-color: #1c3d71;
+    }
+      .button-md {
+        background: #fff;
+      padding: 0 10px;
+      margin: 20px 0;
+    }
+}

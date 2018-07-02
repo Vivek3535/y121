@@ -14,19 +14,130 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
-.bluebtn {
+.bluebtn, a.bluebtn {
     text-transform: none;
-    background: #3c3b6e;
+    background: #3c3b6e !important;
+    border-radius: 20px;
+    padding: 20px 34px !important;
+    margin: 0 10px;
+    font-weight: normal;
+}
+.redbtn, a.redbtn {
+    text-transform: none;
+    background: #b22234 !important;
+    padding: 20px 34px !important;
     border-radius: 20px;
     padding: 20px 34px;
     margin: 0 10px;
     font-weight: normal;
 }
-.redbtn {
-    text-transform: none;
-    background: #b22234;
-    border-radius: 20px;
-    padding: 20px 34px;
-    margin: 0 10px;
+h2 {
     font-weight: normal;
+    display: block;
+    text-align: center;
+    span {
+        background: #3c3b6e;
+        font-size: 16px;
+        color: #fff;
+        padding: 8px 36px;
+        border-radius: 54px
+    }
+}
+
+ion-footer {
+    text-align: center;
+    ion-toolbar {
+        padding: 0 !important;
+    }
+    .toolbar-background-md {
+        border-color: #1c3d71;
+        background: #1c3d71;
+    }
+    ion-icon {
+        font-size: 2em;
+        color: #fff;
+        width: 23%;
+    }
+    span {
+        display: block;
+        font-size: 10px;
+        letter-spacing: 1px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+}
+.comment {
+    text-align: center;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+    ion-icon {
+        display: inline-block;
+        font-size: 1.5em;
+        color: #696969;
+        width: 23%;
+    }
+}
+.commnt_input {
+    padding: 10px 0 20px;
+    .item-input {
+        width: 90%;
+        float: left;
+    }
+    ion-icon {
+        display: inline-block;
+        font-size: 1.8em;
+        color: #696969;
+        margin-top: 9px;
+    }
+    ion-input {
+        border: 1px solid #ccc;
+        border-radius: 44px;
+        font-size: 12px;
+        padding: 0 20px;
+    }
+    .text-input-md {
+        margin: 6px 8px;
+}
+}
+
+.card-md ion-card-content {
+    padding: 0;
+}
+.card-md span {
+    color:#676767;
+    font-size: 11px;
+}
+.card-md p {
+    color:#000;
+}
+.card-md .ion-md-trash {
+    font-size: 16px;
+    margin-top: 0;
+}
+#udpateBox .ng-touched {
+    border: 1px solid #ccc;
+    width: 86%;
+    border-radius: 32px;
+    font-size: 14px;
+    padding: 10px 20px 0;
+    float: left;
+}
+#udpateBox ion-icon {
+    display: inline-block;
+    font-size: 2.2em;
+    margin: 5px 0 0 16px;
+}
+
+.card-md b {
+    color: #000;
+    font-size: 12px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ccc;
+    border-radius: 100%;
+    float: left;
+    margin-right: 10px;
+    text-align: center;
+    line-height: 46px;
+    margin-top: 0;
 }

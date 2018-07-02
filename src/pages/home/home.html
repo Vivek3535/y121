@@ -1,17 +1,136 @@
 <ion-header>
-  <ion-navbar color="dark">
-    <ion-title>
-      Member Area
-    </ion-title>
-    <ion-buttons end>
-      <button ion-button (click)="logout()">
-        <ion-icon name="log-out"></ion-icon>
+  <ion-row class="headerbg" style="padding-top: 10px;"> 
+      <ion-title>
+        <div class="toggle_btn_sec">
+          <button ion-button menuToggle style="order: 1; background-color: #1b3d72;">
+              <ion-icon name="menu" style="color: #fff; font-size: 2.2em;"></ion-icon> 
+            </button>
+          </div>
+      <span style="margin-top: 6px; float: left; position: relative; top: 5px;"><img src="assets/imgs/usericon.png" alt="img" style="float: left; width: 30px; margin-right: 8px;"> <b>{{userDetails.name}}</b></span>
+      </ion-title>
+        <ion-buttons end>
+      <button ion-button (click)="logout()" style="order: 1; background-color: #1b3d72;">
+        <ion-icon name="log-out" style="color: #fff; font-weight: bold; font-size: 2em;"></ion-icon>
       </button>
     </ion-buttons>
-  </ion-navbar>
+  </ion-row>
 </ion-header>
- 
-<ion-content class="home" padding>
-  <h3>Welcome inside, {{username}}!</h3>
-  Your Email is: {{email}}
-</ion-content> 
+
+<ion-content class="home">
+  <!-- <h3>Welcome in SFC</h3>
+  <p>Your Email is: {{email}}</p> -->  
+  <div class="home-banner"> 
+    <iframe width="100%" height="250" src="https://www.youtube.com/embed/xNikAkGsyp0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> 
+  </div> 
+
+  <ion-item id="udpateBox">
+    <textarea #updatebox [(ngModel)]="userPostData.feed" autofocus></textarea>
+    <ion-row>
+        <ion-icon ios="ios-send" md="md-send" (click)="feedUpdate()"></ion-icon>
+    </ion-row>
+  </ion-item>
+
+  <ion-card *ngFor="let item of dataSet; let msgIndex = index">
+    <ion-item>
+        <b>{{userDetails.name}}</b>
+      <ion-icon name="trash" item-right (click)="feedDelete(item.feed_id, msgIndex)"></ion-icon>
+      <ion-card-content>
+        <p [innerHTML]="item.feed | linky"></p>
+        <span>{{this.converTime(item.created) | amTimeAgo}}</span>
+      </ion-card-content>
+    </ion-item>
+  </ion-card>
+
+  <ion-card *ngIf="noRecords">
+    <ion-item>
+      No Records
+    </ion-item>
+  </ion-card>
+
+  <div class="">
+    
+	  <ion-grid>
+		<ion-row>
+			<h2><span>Latest Uploaded Videos</span></h2>
+			<ion-col col-12 *ngFor="let photo of photos; let id = index">
+				<ion-card class="block">
+				<img [src]="photo.url" *ngIf="photo" />
+				<div class="comment">
+					  {{photo.likes}} <ion-icon ios="ios-thumbs-up" md="md-thumbs-up" name="like" (click)="likePhoto(photo.id)"></ion-icon>
+					  <!-- <ion-icon ios="ios-thumbs-down" md="md-thumbs-down"></ion-icon> -->
+            {{photo.share}} <ion-icon ios="ios-share-alt" md="md-share-alt" name="share" (click)="sharePhoto(photo.id)"></ion-icon>
+            <ion-icon ios="ios-share" md="md-share" (click)="shareInfo(photo.url)"></ion-icon>
+					  <!-- <ion-icon name="trash" class="deleteIcon" (click)="deletePhoto(photo.id,id)"></ion-icon> -->
+				</div>
+				<div class="commnt_input">
+					  <ion-item>
+						<ion-input type="text" placeholder="Comment" #newComment
+						(keyup.enter)="addComment(photo.id,newComment.value); newComment.value=''"
+						(blur)="addComment(photo.id,newComment.value); newComment.value='' "></ion-input>
+					  </ion-item>
+					  <ion-icon ios="ios-send" md="md-send"></ion-icon>
+					  <ul><li *ngFor="let comment of comments">{{comments}} <ion-icon name="trash" class="deleteIcon" (click)="deletecomnt();" style="font-size: 16px;"></ion-icon></li></ul>
+				</div>
+
+				</ion-card>
+			</ion-col>
+		</ion-row>
+	  </ion-grid>
+  </div>
+
+  <div class="schedule_sec">
+      <h2><span>Match Schedule</span></h2>
+    <ul>
+      <li>
+          <img src="assets/imgs/s_1.jpg" alt="img">
+          <b>Sunday 26 June, 2018</b>
+      </li>
+      <li>
+          <img src="assets/imgs/s_2.jpg" alt="img">
+          <b>Sunday 26 June, 2018</b>
+      </li>
+      <li>
+          <img src="assets/imgs/s_3.jpg" alt="img"> 
+          <b>Sunday 26 June, 2018</b>
+      </li>
+      <li>
+          <img src="assets/imgs/s_4.jpg" alt="img">
+          <b>Sunday 26 June, 2018</b>
+      </li>
+    </ul>
+  </div>
+  <div class="home-blog">
+    <h2><span>Top HeadLines</span></h2>
+    <ion-row class="border-btm">
+      <h3>Sources: Buccaneers' Jameis Winston faces suspension for first three games</h3>
+      <ion-col col-6><img src="assets/imgs/img_1.jpg" alt="img"></ion-col>
+      <ion-col col-6><p>The NFL is planning to suspend Tampa Bay Buccaneers quarterback Jameis Winston the first three games.</p></ion-col>
+    </ion-row>
+    <ion-row class="border-btm">
+        <h3>Aaron Rodgers' backup battle futile without improvement</h3>
+      <ion-col col-6><p>Although Hundley kept the Packers on the fringes of playoff contention with three victories after Rodgers broke.</p></ion-col>
+      <ion-col col-6><img src="assets/imgs/img_2.jpg" alt="img"></ion-col>
+    </ion-row>
+    <ion-row class="border-btm">
+        <h3>Playing 'Big Nickel,' Patriots value safety position</h3>
+      <ion-col col-6><img src="assets/imgs/img_1.jpg" alt="img"></ion-col>
+      <ion-col col-6><p>It was a base 3-4, and Belichick invested top picks in defensive linemen Richard Seymour (2001, No. 6 overall).</p></ion-col>
+    </ion-row>
+    <ion-row class="border-btm">
+        <h3>Rams another 'Dream Team' Eagles? We'll wait and see</h3>
+      <ion-col col-6><p>LOS ANGELES -- The heightened excitement and the lofty expectations that surround these Los Angeles Rams.</p></ion-col>
+      <ion-col col-6><img src="assets/imgs/img_2.jpg" alt="img"></ion-col>
+    </ion-row>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <div style="background: #1c3d71; padding: 10px 0;">
+    <ion-icon ios="ios-apps" md="md-apps" (click)="newsfeeds()"><span>News Feed</span></ion-icon>
+    <ion-icon ios="ios-people" md="md-people" (click)="followfrndsPage()"><span>Follow Friends</span></ion-icon>
+    <ion-icon ios="ios-camera" md="md-camera" (click)="takePhoto()"><span>Add Video</span></ion-icon>
+    <ion-icon ios="ios-notifications" md="md-notifications"><span>Notifications</span></ion-icon>
+    <!-- <ion-icon ios="ios-menu" md="md-menu"><span>More</span></ion-icon> -->
+  </div>
+  </ion-toolbar>
+</ion-footer>

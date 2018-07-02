@@ -1,0 +1,18 @@
+page-sfcfav {
+    .headerbg{ background: #3c3b6e; text-align: center;}
+    .top-icons { text-align: left; padding: 0 15px; color:#fff;  text-transform: capitalize;}
+    .top-icons button {background: transparent; box-shadow: none; padding: 0; text-transform: capitalize; font-weight: normal;}
+    .top-icons button:hover {background: transparent !important;}
+    .toolbar-background{ background: #3c3b6e;}
+    .team-logos{text-align: center;}
+    .logo-sec {-moz-box-shadow: inset 0 0 3px #cecece; -webkit-box-shadow: inset 0 0 3px #cecece; box-shadow: inset 0 0 3px #cecece;
+        padding: 10px;}
+    .logo-sec p {font-weight: 500; color: #3c3b6e; margin-bottom: 0; font-size: 11px; text-transform: uppercase;}
+
+    .logo-sec .item-inner { border-bottom: none !important; }
+    .logo-sec ion-item.item.item-block.item-md.item-checkbox { text-align: center; padding-left: 0;}
+    .logo-sec .checkbox-icon { opacity: 0;}
+    .logo-sec .checkbox-icon.checkbox-checked { opacity: 1;}
+    .logo-sec .item.item-md .checkbox-md{margin: 5px 2px 5px 4px;}
+
+}

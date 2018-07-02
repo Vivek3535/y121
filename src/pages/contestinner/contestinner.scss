@@ -1,0 +1,56 @@
+page-contestinner {
+    .headerbg{ background: #1b3c71; text-align: center;}
+    .headerbg .icon-right{text-align: right;}
+    .top-icons { text-align: left; padding: 0 15px; color:#fff;  text-transform: capitalize;}
+    .top-icons button {background: transparent; box-shadow: none; padding: 0; text-transform: capitalize; font-weight: normal;}
+    .top-icons button:hover {background: transparent !important;}
+    .searchbox{margin-top: 5px;}
+    .searchbox .searchbar{background: transparent; border: none; padding: 0;}
+    .searchbox .searchbar .searchbar-input{background-color: #0F2C5A; color: #fff; box-shadow: none; border-radius: 20px; height: 3.3rem; font-size: 1.3rem; padding-left: 16px; padding-right: 16px;}
+    .searchbox .searchbar .searchbar-search-icon{display: none;}  
+    .searchbox .searchbar .searchbar-input::placeholder {color: #fff;}
+    .user-img {border-radius: 50%; width: 42px; height: 42px;}
+    ul {margin: 0;padding: 0; list-style: none;}
+    .contestselected {background: #FF6700; position: relative; width: 100%; height: 150px; text-align: center; margin: 10px 0;}
+    .contestselected .box{left: 50%; position: absolute;top: 50%; transform: translate(-50%, -50%);margin: 0 auto; width: 100%; color: #fff;}
+    .contestselected .box h3{font-size: 20px; font-weight: normal; margin: 10px 0; text-transform: uppercase;}
+    .contestselected .box h4{font-size: 18px; font-weight: normal; margin: 10px 0;}
+    .all-info{margin: 15px; overflow: hidden;}
+    .info-one { overflow: hidden;}
+    .info-one .left {width: 12%; float: left;}
+    .info-one .right {float: right; width: 88%;}
+    .info-one .left img { width: 28px; height: 28px; border-radius: 50%; }
+    .info-one .right h4 { font-size: 15px; font-weight: normal;  margin-top: 0;  margin-bottom: 5px;  color: #1B3C71; }
+    .info-one .right p { margin-top: 0;  font-size: 11px; color: #333;}
+    .info-one .right iframe{width: 100%; height: 200px;}
+    .info-vote{border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; padding: 5px 0; margin-top: 7px;}
+    .info-vote li {display: inline-block; font-size: 10px; padding-left: 4%; color: #333;}
+    .info-vote li:first-child {padding-left: 0;}
+    .info-vote li img { padding-right: 4px; width: 14px;}
+    .totle-comm {padding: 5px 0;border-bottom: 1px solid #ccc;}
+    .totle-comm li{display: inline-block; font-size: 11px; color: #333;}
+    .totle-comm li:last-child{float: right;}
+    .info-two{background: #f4f4f4; margin: 10px 0; border-radius: 10px; padding: 10px; overflow: hidden;}
+    .info-two .left{width: 78%; float: left;}
+    .info-two .right{width: 20%; float: right;}
+    .info-two .left p, .info-two .right p {margin: 0;}
+    .info-two .left p img {width: 28px;height: 28px;border-radius: 50%;float: left;}
+    .info-two .left p span, .info-two .right p span {font-size: 10px;color: #333; margin-left: 10px;}
+    .info-two .left p span textarea { width: 85%; background: #f4f4f4; border: none; box-shadow: none; }
+    .info-two .right p img {float: left;}
+    .info-three { padding: 10px;}
+    .info-three .left { float: left; width: 10%; margin-right: 3%;}
+    .info-three .left img {border-radius: 50%;width: 32px;height: 32px;}
+    .info-three .right {float: right; width: 87%;}
+    .info-three .right h6 { font-size: 14px; color: #000; margin-top: 0;margin-bottom: 0;}
+    .info-three .right small {font-size: 10px;color: #333;}
+    .info-three .right time {float: right;font-size: 12px;color: #333;margin-top: -16px;}
+    .info-three .right p{margin: 5px 0 0 ; font-size: 10px; color: #333;}
+    .info-three .right .info-vote {border-top: none; border-bottom: none; padding: 2px 0; margin-top: 5px; }
+    .info-three li {display: inline-flex; margin-top: 15px; }
+    .info-three li:first-child{margin-top:0;}
+    .info-three .right .info-vote li{margin-top:0; display: inline-block;}
+    .footer ion-icon { color: #333; width: 40%; margin: 10px 0; }
+    .footer .camera {background: #FF6700; padding: 7px; border-radius: 50%; width: 42px; height: 42px;}
+    .footer ion-icon img {width: 22px; margin: 0px;}
+}

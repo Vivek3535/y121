@@ -1,47 +1,44 @@
-<ion-content class="login-content">
+<ion-content>
   <ion-row class="logo-row">
-      <img src="../assets/imgs/img_login_bg.png" class="banner_img"/>
-     <div class="login_sec">
-    <ion-col>
-      <img src="../assets/imgs/img_logo.png" class="logo_img"/>
-    </ion-col>
- 
- 
-  <div class="login-box">
-    <form (ngSubmit)="login()" #registerForm="ngForm">
-      <ion-row>
-        <ion-col>
-          <ion-list inset>
-            
-            <ion-item>
-              <ion-input type="text" placeholder="Email" name="email" [(ngModel)]="registerCredentials.email" required></ion-input>
-            </ion-item>
-            
-            <ion-item>
-              <ion-input type="password" placeholder="Password" name="password" [(ngModel)]="registerCredentials.password" required></ion-input>
-            </ion-item>
-<hr>
-            <ion-col>
-                <button ion-button class="submit-btn redbtn" full type="submit">Login with gmail</button>
+    <img src="../assets/imgs/img_login_bg.png" class="banner_img" />
+    <div class="login_sec">
+        <ion-row class="top-icons">
+            <ion-col col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6>
+                <button ion-button icon-left (click)="backtomain()"> 
+                  <ion-icon name="arrow-back"></ion-icon>
+                    Back
+                  </button>
             </ion-col>
-            <ion-col>
-                <button ion-button class="submit-btn bluebtn" full type="submit">Login with facebook</button>
+            <ion-col col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6>
+              <p text-right>Login</p>
             </ion-col>
-            
-          </ion-list>
-        </ion-col>
-      </ion-row>
-      
-      <ion-row>
-        <ion-col class="signup-col">
-          <button ion-button class="submit-btn bluebtn" full type="submit" [disabled]="!registerForm.form.valid">Login</button>
-          <!-- <button ion-button class="register-btn" block clear (click)="createAccount()">Create New Account</button> -->
-
-        </ion-col>
-      </ion-row>
-      
-    </form>
-  </div>
-</div>
-</ion-row>
+          </ion-row>
+      <ion-col> <img src="../assets/imgs/img_logo.png" class="logo_img" /></ion-col>
+      <div class="login-box" padding>
+          <p>Enter Your E-mail & Password</p>
+        
+          <ion-row>
+            <ion-col>
+              <ion-list>
+                <ion-input type="text" value="" [(ngModel)]="userData.username" placeholder="Enter User Name"></ion-input>
+                <ion-input type="password" [(ngModel)]="userData.password" placeholder="Enter Password"></ion-input>
+                  <p><a button (click)="forGotpassPage()">Forgot Password?</a></p>
+              
+                <hr>
+                <button ion-button block class="bluebtn" (click)="login()">Login</button>
+              </ion-list>
+            </ion-col>
+          </ion-row>
+  
+          <ion-row>
+            <div class="signup-col">
+              <a href="#" ion-button class="submit-btn redbtn" full type="submit">Login with gmail</a>
+              <a href="#" ion-button class="submit-btn bluebtn" full type="submit">Login with facebook</a>
+              <!-- <button ion-button class="register-btn" block clear (click)="createAccount()">Create New Account</button> -->
+            </div>
+          </ion-row>
+        
+      </div>
+    </div>
+  </ion-row>
 </ion-content>

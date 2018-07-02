@@ -1,0 +1,131 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content>
+  <div class="headerbg">
+    <ion-row class="top-icons">
+      <ion-col col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6>
+        <button ion-button icon-left (click)="backtomain()">
+          <ion-icon name="arrow-back"></ion-icon>
+          Back
+        </button>
+      </ion-col>
+      <ion-col col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 class="icon-right">
+        <button ion-button menuToggl>
+          <ion-icon name="menu" style="color: #fff; font-size: 2.2em;"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+    <div class="profile-info">
+      <div class="user-pro">
+        <img class="user-img" (click)="takePhoto()" src="{{userProfileData.profilePicture}}" alt="profile"> 
+        <img class="user-live" src="assets/imgs/live-icon.png" alt="live">
+      </div>
+      <div class="user-name">{{userProfileData.userName}}</div>
+      <div class="user-coll-age">College Name<i>|</i> <Span>24 year old</Span></div>
+      <div class="user-follow">
+        <ul>
+          <li><h3>2055</h3>
+            <p>Followers</p></li>
+          <li><h3>{{userProfileData.userFollowersCount}}</h3>
+            <p>Following</p></li>
+          <li><h3>120</h3>
+            <p>Trophies won</p></li>
+          <li><h3>3000</h3>
+            <p>Videos shared</p></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="friend-box">
+    <span>Friends</span>
+		<ul>
+			<li *ngFor="let follower of this.userProfileData.userFollowers; let id = index"><img src="{{follower}}" alt="Friends"></li>
+		</ul>
+      <a class="showall" href="#">Show All</a>
+  </div>
+  <div class="photovideo">
+    <h4>Photos & Videos</h4>
+      <ul>
+        <li *ngFor="let post of this.userProfileData.userPosts; let id = index"><img src="{{post}}" alt="Photos"></li>
+      </ul>
+  </div>
+  <div class="status-update">
+    <div class="status-des">
+      <p><img src="{{userProfileData.profilePicture}}" alt="status"> <span><textarea cols="2" rows="3" placeholder="Post a status update"></textarea></span></p>
+    </div>
+    <div class="update-des">
+      <ul>
+        <li><button ion-button><ion-icon><img src="assets/imgs/images-group-icon.png" alt="Photos"></ion-icon>Photo | Video</button></li>
+        <li><button ion-button><ion-icon><img src="assets/imgs/checkin-icon.png" alt="Check in"></ion-icon>Check In</button></li>
+      </ul>
+    </div>   
+  </div>
+  <div class="all-info">
+    <div class="info-one">
+      <div class="left"><img src="{{userProfileData.profilePicture}}" alt="status"></div>
+      <div class="right">
+        <!-- <h4>James doe shared a video of soccer</h4> -->
+        <p>{{this.userProfileData.latestPost.title}}</p>
+        <!-- <iframe src="https://www.youtube.com/embed/xNikAkGsyp0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>  -->
+		<img src="{{this.userProfileData.latestPost.url}}" alt="postimg">
+        <div class="info-vote">
+          <ul>
+            <li>{{this.userProfileData.latestPost.likes}} Votes</li>
+            <li><img src="assets/imgs/thumbs-icon.png" alt="thumbs-icon">Vote this video</li>
+            <li><img src="assets/imgs/comment-icon.png" alt="comment-icon">Comment</li>
+            <li><img src="assets/imgs/heart-icon.png" alt="heart-icon">Like</li>
+            <li><img src="assets/imgs/share-icon.png" alt="share-icon">Share</li>
+          </ul>
+          </div>
+          <div class="totle-comm">
+            <ul>
+              <li>Comments</li>
+              <li>{{this.userProfileData.latestPost.commentsCount}} comments</li>
+            </ul>
+          </div>
+      </div>
+    </div>
+    <div class="info-two">
+      <div class="left">
+          <p><img src="{{userProfileData.profilePicture}}" alt="status"> <span>Leave Comment</span></p>
+      </div>
+      <div class="right">
+          <p><img src="assets/imgs/images-group-icon.png" alt="Post"> <span>Post</span></p>
+      </div>
+    </div>
+    <div class="info-three">
+      <ul>
+        <li *ngFor="let comment of this.userProfileData.latestPost.comments; let id = index">
+        <div class="left"><img src="{{comment.profilepic}}" alt="status"></div>
+        <div class="right">
+          <h6>{{comment.name}}</h6>
+          <small>College name</small>
+          <time>1 min <span>&hellip;</span></time>
+          <p>{{comment.comment}}</p>
+			 <div class="info-vote">
+              <!-- <ul>
+                <li><img src="assets/imgs/heart-icon.png" alt="heart-icon">Like</li>
+                <li><img src="assets/imgs/comment-icon.png" alt="comment-icon">Comment</li>
+              </ul>-->
+            </div> 
+        </div>
+      </li>
+    </ul>
+    </div>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <div class="footer">
+      <!-- <ion-icon><img src="assets/imgs/footer-share-icon.png" alt="Share"><span>Share</span></ion-icon> -->
+      <ion-icon><img src="assets/imgs/footer-vs-icon.png" alt="Challenge" (click)="getchallenge()"><span>Challenge</span></ion-icon>
+      <ion-icon  class="camera"><img src="assets/imgs/footer-camera-icon.png" alt="camera"></ion-icon>
+      <ion-icon><img src="assets/imgs/footer-reward-icon.png" alt="Rewards"><span>Rewards</span></ion-icon>
+      <!-- <ion-icon><img src="assets/imgs/footer-search-icon.png" alt="Search"><span>Search</span></ion-icon> -->
+    </div>
+  </ion-toolbar>
+</ion-footer>

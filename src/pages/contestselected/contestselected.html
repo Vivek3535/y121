@@ -1,0 +1,243 @@
+<!--
+  Generated template for the ContestselectedPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content>
+  <div class="headerbg">
+    <ion-row class="top-icons">
+      <ion-col col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3>
+        <button ion-button icon-left>
+          <ion-icon name="arrow-back" (click)="backtoselectprofile()"></ion-icon>
+          Back
+        </button>
+      </ion-col>
+      <ion-col col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6>
+        <div class="searchbox">
+          <ion-searchbar placeholder="Search here"></ion-searchbar>
+        </div>
+      </ion-col>
+      <ion-col col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 class="icon-right">
+        <button ion-button>
+          <img class="user-img" src="assets/imgs/user-pro.jpg" alt="user">
+        </button>
+      </ion-col>
+    </ion-row>
+  </div>
+  <div class="contestselected">
+    <div class="box"  *ngFor="let post of posts">
+      <h4>3 Days Left for Winner Announcement</h4>
+      <h3 (click)="gotocontestselect()">{{post.title}}</h3>
+    </div>
+  </div>
+  <div class="selected-details">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4>
+          <div class="details-box">
+            <a href="#">
+              <video>
+                <source src="assets/imgs/video.mp4" type="video/mp4">
+              </video>
+              <div class="cont-info">
+                <img class="user-img" src="assets/imgs/user-pro4.jpg" alt="profile">
+                <span>
+                  <h6>James doe </h6>
+                  <p>35 Votes</p>
+                </span>
+              </div>
+            </a>
+          </div>
+        </ion-col>
+        <ion-col col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4>
+          <div class="details-box">
+            <a href="#">
+              <video>
+                <source src="assets/imgs/video.mp4" type="video/mp4">
+              </video>
+              <div class="cont-info">
+                <img class="user-img" src="assets/imgs/user-pro4.jpg" alt="profile">
+                <span>
+                  <h6>James doe </h6>
+                  <p>35 Votes</p>
+                </span>
+              </div>
+            </a>
+          </div>
+        </ion-col>
+        <ion-col col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4>
+          <div class="details-box">
+            <a href="#">
+              <video>
+                <source src="assets/imgs/video.mp4" type="video/mp4">
+              </video>
+              <div class="cont-info">
+                <img class="user-img" src="assets/imgs/user-pro4.jpg" alt="profile">
+                <span>
+                  <h6>James doe </h6>
+                  <p>35 Votes</p>
+                </span>
+              </div>
+            </a>
+          </div>
+        </ion-col>
+        <ion-col col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4>
+          <div class="details-box">
+            <a href="#">
+              <video>
+                <source src="assets/imgs/video.mp4" type="video/mp4">
+              </video>
+              <div class="cont-info">
+                <img class="user-img" src="assets/imgs/user-pro4.jpg" alt="profile">
+                <span>
+                  <h6>James doe </h6>
+                  <p>35 Votes</p>
+                </span>
+              </div>
+            </a>
+          </div>
+        </ion-col>
+        <ion-col col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4>
+          <div class="details-box">
+            <a href="#">
+              <video>
+                <source src="assets/imgs/video.mp4" type="video/mp4">
+              </video>
+              <div class="cont-info">
+                <img class="user-img" src="assets/imgs/user-pro4.jpg" alt="profile">
+                <span>
+                  <h6>James doe </h6>
+                  <p>35 Votes</p>
+                </span>
+              </div>
+            </a>
+          </div>
+        </ion-col>
+        <ion-col col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4>
+          <div class="details-box">
+            <a href="#">
+              <video>
+                <source src="assets/imgs/video.mp4" type="video/mp4">
+              </video>
+              <div class="cont-info">
+                <img class="user-img" src="assets/imgs/user-pro4.jpg" alt="profile">
+                <span>
+                  <h6>James doe </h6>
+                  <p>35 Votes</p>
+                </span>
+              </div>
+            </a>
+          </div>
+        </ion-col>
+        <ion-col col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4>
+          <div class="details-box">
+            <a href="#">
+              <video>
+                <source src="assets/imgs/video.mp4" type="video/mp4">
+              </video>
+              <div class="cont-info">
+                <img class="user-img" src="assets/imgs/user-pro4.jpg" alt="profile">
+                <span>
+                  <h6>James doe </h6>
+                  <p>35 Votes</p>
+                </span>
+              </div>
+            </a>
+          </div>
+        </ion-col>
+        <ion-col col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4>
+          <div class="details-box">
+            <a href="#">
+              <video>
+                <source src="assets/imgs/video.mp4" type="video/mp4">
+              </video>
+              <div class="cont-info">
+                <img class="user-img" src="assets/imgs/user-pro4.jpg" alt="profile">
+                <span>
+                  <h6>James doe </h6>
+                  <p>35 Votes</p>
+                </span>
+              </div>
+            </a>
+          </div>
+        </ion-col>
+        <ion-col col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4>
+          <div class="details-box">
+            <a href="#">
+              <video>
+                <source src="assets/imgs/video.mp4" type="video/mp4">
+              </video>
+              <div class="cont-info">
+                <img class="user-img" src="assets/imgs/user-pro4.jpg" alt="profile">
+                <span>
+                  <h6>James doe </h6>
+                  <p>35 Votes</p>
+                </span>
+              </div>
+            </a>
+          </div>
+        </ion-col>
+        <ion-col col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4>
+          <div class="details-box">
+            <a href="#">
+              <video>
+                <source src="assets/imgs/video.mp4" type="video/mp4">
+              </video>
+              <div class="cont-info">
+                <img class="user-img" src="assets/imgs/user-pro4.jpg" alt="profile">
+                <span>
+                  <h6>James doe </h6>
+                  <p>35 Votes</p>
+                </span>
+              </div>
+            </a>
+          </div>
+        </ion-col>
+        <ion-col col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4>
+          <div class="details-box">
+            <a href="#">
+              <video>
+                <source src="assets/imgs/video.mp4" type="video/mp4">
+              </video>
+              <div class="cont-info">
+                <img class="user-img" src="assets/imgs/user-pro4.jpg" alt="profile">
+                <span>
+                  <h6>James doe </h6>
+                  <p>35 Votes</p>
+                </span>
+              </div>
+            </a>
+          </div>
+        </ion-col>
+        <ion-col col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4>
+          <div class="details-box">
+            <a href="#">
+              <video>
+                <source src="assets/imgs/video.mp4" type="video/mp4">
+              </video>
+              <div class="cont-info">
+                <img class="user-img" src="assets/imgs/user-pro4.jpg" alt="profile">
+                <span>
+                  <h6>James doe </h6>
+                  <p>35 Votes</p>
+                </span>
+              </div>
+            </a>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
+<ion-footer>
+    <ion-toolbar>
+      <div class="footer">
+        <!-- <ion-icon><img src="assets/imgs/footer-share-icon.png" alt="Share"><span>Share</span></ion-icon> -->
+        <ion-icon><img src="assets/imgs/footer-vs-icon.png" alt="Challenge"><span>Challenge</span></ion-icon>
+        <ion-icon  class="camera"><img src="assets/imgs/footer-camera-icon.png" alt="camera"></ion-icon>
+        <ion-icon><img src="assets/imgs/footer-reward-icon.png" alt="Rewards"><span>Rewards</span></ion-icon>
+        <!-- <ion-icon><img src="assets/imgs/footer-search-icon.png" alt="Search"><span>Search</span></ion-icon> -->
+      </div>
+    </ion-toolbar>
+  </ion-footer>
