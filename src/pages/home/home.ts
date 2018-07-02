@@ -255,11 +255,8 @@ export class HomePage {
     });
   }
 
-  shareInfo() {
-    let imageName = "http://sfc.dimensiongraphic.com/sfc-app/api/userProfileImage/12/posts/cdv_photo_002.jpg";
-    const ROOT_DIRECTORY = 'file:///sdcard//';
-    const downloadFolderName = 'tempDownloadFolder';
-    this.socialSharing.share("Message","Subject", ROOT_DIRECTORY + downloadFolderName + "/" + imageName, imageName).
+  shareInfo(imgUrl) {
+    this.socialSharing.share(imgUrl, null, null, null).
       then(() => {
         //alert("Sharing success");
       
